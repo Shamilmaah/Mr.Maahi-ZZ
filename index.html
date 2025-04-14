@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr. Maahi's Royal Empire</title>
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
+    integrity="sha512-Fo3rlrZj/k7ujTnH1zZHyE1qg2W/jJhqn+zfsWeLkczxbAhJ5n7R8Z/fY1lDms5nuYwb0er8NbpBEmZP56F2OA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* General Styles */
+    body {
+      background: linear-gradient(to bottom, #fff, #ffd700);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(to right, #ffd700, #ff1493);
+      padding: 25px;
+      text-align: center;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px #000;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px 30px; /* extra padding to offset the fixed header */
+    }
+    .hero img {
+      width: 240px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 0, 153, 0.6);
+    }
+    section {
+      padding: 25px;
+      max-width: 900px;
+      margin: 20px auto;
+      background: #fffafa;
+      border-radius: 15px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    }
+    section.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      color: #ff1493;
+      margin-bottom: 15px;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    .contact a {
+      display: block;
+      color: #444;
+      margin-bottom: 8px;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+      color: #ff1493;
+    }
+    /* Gallery Styling */
+    .gallery {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .gallery h2 {
+      color: #ff1493;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery-grid a {
+      display: block;
+      pointer-events: none; /* Fake link – disables clicking */
+    }
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 12px;
+      background: linear-gradient(to right, #ffd700, #ff1493);
+      color: white;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <header>Mr. Maahi's Royal Empire</header>
+  
+  <div class="hero">
+    <img src="C:\Users\Maahi\Desktop/Maahi.jpg" alt="Mr. Maahi - The King">
+  </div>
+  
+  <section>
+    <h2>About Me</h2>
+    <p>Hello, I'm <strong>Shamil Maahi</strong>, an A/L Science stream student at Maayurapada National School in Sri Lanka. I specialize in Biology, Physics, and Chemistry, and have a strong passion for understanding the world.</p>
+    <p>My goal is to become a strategic leader, and I am committed to excellence in academics and beyond.</p>
+  </section>
+  
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>Strategic Thinker</li>
+      <li>Leadership: Former NCC member</li>
+      <li>Disciplined and focused</li>
+      <li>Martial Arts: Shotokan Karate &amp; Wing Chun</li>
+      <li>Goal-Driven &amp; Future-Focused</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h2>Academic Achievements</h2>
+    <ul>
+      <li>🥈 Silver Medalist – 2022 Karate Kata Championship</li>
+    </ul>
+  </section>
+  
+  <section class="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <!-- Gallery images with fake links; update the file names if necessary -->
+      <a href="#"><img src="assets/pic1.jpg" alt="Gallery Image 1"></a>
+      <a href="#"><img src="assets/pic2.jpg" alt="Gallery Image 2"></a>
+      <a href="#"><img src="assets/pic3.jpg" alt="Gallery Image 3"></a>
+      <a href="#"><img src="assets/pic4.jpg" alt="Gallery Image 4"></a>
+    </div>
+  </section>
+  
+  <section class="contact">
+    <h2>Let's Connect</h2>
+    <a href="mailto:shamilmaahi17@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+    <a href="https://wa.me/94703608393" target="_blank"><i class="fas fa-comment"></i> WhatsApp</a>
+    <!-- Fake social links – placeholder icons only -->
+    <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+    <a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+  </section>
+  
+  <footer>
+    &copy; 2025 Mr. Maahi | Crafted with care by Diana
+  </footer>
+  
+  <!-- JavaScript for scroll animations -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll("section");
+      const observerOptions = { threshold: 0.2 };
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+  
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+</html>
