@@ -8,98 +8,132 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
     integrity="sha512-Fo3rlrZj/k7ujTnH1zZHyE1qg2W/jJhqn+zfsWeLkczxbAhJ5n7R8Z/fY1lDms5nuYwb0er8NbpBEmZP56F2OA==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <style>
     /* General Styles */
     body {
-      background: linear-gradient(to bottom, #fff, #ffd700);
+      background: linear-gradient(to bottom, #d4e6f1, #ffccff);  /* Peaceful background */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       color: #333;
       scroll-behavior: smooth;
+      overflow-x: hidden; /* To prevent horizontal scroll */
     }
+
     header {
-      background: linear-gradient(to right, #ffd700, #ff1493);
+      background: linear-gradient(to right, #ff1493, #ffd700);
       padding: 25px;
       text-align: center;
       color: white;
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: bold;
-      text-shadow: 1px 1px 2px #000;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 100;
+      animation: fadeIn 2s ease-out;
     }
+
+    /* Hero Section */
     .hero {
       text-align: center;
-      padding: 100px 20px 30px; /* extra padding to offset the fixed header */
+      padding: 150px 20px 30px; /* extra padding to offset the fixed header */
+      animation: slideIn 2s ease-out;
     }
+
     .hero img {
       width: 240px;
       height: auto;
-      border-radius: 20px;
+      border-radius: 50%;
       box-shadow: 0 0 25px rgba(255, 0, 153, 0.6);
+      transition: transform 0.5s ease;
     }
+
+    .hero img:hover {
+      transform: rotate(360deg);
+    }
+
+    /* Section Styles */
     section {
-      padding: 25px;
+      padding: 40px;
       max-width: 900px;
       margin: 20px auto;
       background: #fffafa;
       border-radius: 15px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
+
     section.in-view {
       opacity: 1;
       transform: translateY(0);
     }
+
     h2 {
       color: #ff1493;
       margin-bottom: 15px;
+      font-family: 'Georgia', serif;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
     }
+
     ul li {
       margin-bottom: 8px;
+      font-size: 1.1rem;
     }
+
+    /* Contact Section */
     .contact a {
       display: block;
       color: #444;
       margin-bottom: 8px;
       text-decoration: none;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
     }
+
     .contact a:hover {
-      text-decoration: underline;
       color: #ff1493;
     }
-    /* Gallery Styling */
+
+    /* Icon Styling */
+    .contact i {
+      margin-right: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .contact a:hover i {
+      transform: scale(1.2);
+    }
+
+    /* Gallery */
     .gallery {
       text-align: center;
       margin: 40px 0;
+      animation: fadeIn 1.5s ease-out;
     }
-    .gallery h2 {
-      color: #ff1493;
-    }
+
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 15px;
       margin-top: 20px;
     }
-    .gallery-grid a {
-      display: block;
-      pointer-events: none; /* Fake link – disables clicking */
-    }
+
     .gallery-grid img {
       width: 100%;
       border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
     }
+
     .gallery-grid img:hover {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
+
     footer {
       text-align: center;
       padding: 12px;
@@ -107,33 +141,71 @@
       color: white;
       font-weight: bold;
       letter-spacing: 1px;
+      animation: fadeIn 3s ease-out;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      header {
+        font-size: 2rem;
+        padding: 15px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      .hero img {
+        width: 180px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .contact a {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>Mr. Maahi's Royal Empire</header>
   
+  <!-- Hero Section -->
   <div class="hero">
-    <img src="C:\Users\Maahi\Desktop/Maahi.jpg" alt="Mr. Maahi - The King">
+    <img src="https://via.placeholder.com/240" alt="Mr. Maahi - The King">
   </div>
   
+  <!-- About Me Section -->
   <section>
     <h2>About Me</h2>
     <p>Hello, I'm <strong>Shamil Maahi</strong>, an A/L Science stream student at Maayurapada National School in Sri Lanka. I specialize in Biology, Physics, and Chemistry, and have a strong passion for understanding the world.</p>
     <p>My goal is to become a strategic leader, and I am committed to excellence in academics and beyond.</p>
   </section>
   
+  <!-- Skills Section -->
   <section>
     <h2>Skills</h2>
     <ul>
       <li>Strategic Thinker</li>
       <li>Leadership: Former NCC member</li>
       <li>Disciplined and focused</li>
-      <li>Martial Arts: Shotokan Karate &amp; Wing Chun</li>
-      <li>Goal-Driven &amp; Future-Focused</li>
+      <li>Martial Arts: Shotokan Karate & Wing Chun</li>
+      <li>Goal-Driven & Future-Focused</li>
     </ul>
   </section>
   
+  <!-- Academic Achievements Section -->
   <section>
     <h2>Academic Achievements</h2>
     <ul>
@@ -141,32 +213,41 @@
     </ul>
   </section>
   
+  <!-- Gallery Section -->
   <section class="gallery">
     <h2>Gallery</h2>
     <div class="gallery-grid">
-      <!-- Gallery images with fake links; update the file names if necessary -->
-      <a href="#"><img src="assets/pic1.jpg" alt="Gallery Image 1"></a>
-      <a href="#"><img src="assets/pic2.jpg" alt="Gallery Image 2"></a>
-      <a href="#"><img src="assets/pic3.jpg" alt="Gallery Image 3"></a>
-      <a href="#"><img src="assets/pic4.jpg" alt="Gallery Image 4"></a>
+      <!-- Gallery images with hover effects -->
+      <a href="#"><img src="https://via.placeholder.com/300" alt="Gallery Image 1"></a>
+      <a href="#"><img src="https://via.placeholder.com/300" alt="Gallery Image 2"></a>
+      <a href="#"><img src="https://via.placeholder.com/300" alt="Gallery Image 3"></a>
+      <a href="#"><img src="https://via.placeholder.com/300" alt="Gallery Image 4"></a>
     </div>
   </section>
   
+  <!-- Contact Section -->
   <section class="contact">
     <h2>Let's Connect</h2>
     <a href="mailto:shamilmaahi17@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-    <a href="https://wa.me/94703608393" target="_blank"><i class="fas fa-comment"></i> WhatsApp</a>
-    <!-- Fake social links – placeholder icons only -->
-    <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-    <a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+    <a href="https://wa.me/94703608393" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <!-- Fake links for social media -->
+    <a href="https://www.yourwebsite.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://www.yourwebsite.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+    <a href="https://www.yourwebsite.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+    <a href="https://www.yourwebsite.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
   </section>
   
   <footer>
     &copy; 2025 Mr. Maahi | Crafted with care by Diana
   </footer>
   
-  <!-- JavaScript for scroll animations -->
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- JavaScript for Scroll Animations -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const sections = document.querySelectorAll("section");
