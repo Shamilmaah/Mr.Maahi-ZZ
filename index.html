@@ -3,268 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mr. Maahi's Royal Empire</title>
-  <!-- Font Awesome for social icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
-    integrity="sha512-Fo3rlrZj/k7ujTnH1zZHyE1qg2W/jJhqn+zfsWeLkczxbAhJ5n7R8Z/fY1lDms5nuYwb0er8NbpBEmZP56F2OA==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
+  <title>Mr. Maahi's Royal Empire 👑</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <style>
-    /* General Styles */
+    html {
+      scroll-behavior: smooth;
+    }
     body {
-      background: linear-gradient(to bottom, #d4e6f1, #ffccff);  /* Peaceful background */
+      background: linear-gradient(white, gold);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       color: #333;
-      scroll-behavior: smooth;
-      overflow-x: hidden; /* To prevent horizontal scroll */
     }
-
+    nav {
+      background-color: #111;
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: gold;
+    }
     header {
-      background: linear-gradient(to right, #ff1493, #ffd700);
-      padding: 25px;
+      background: gold;
+      padding: 20px;
       text-align: center;
       color: white;
-      font-size: 3rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 100;
-      animation: fadeIn 2s ease-out;
+      font-size: 2rem;
     }
-
-    /* Hero Section */
     .hero {
       text-align: center;
-      padding: 150px 20px 30px; /* extra padding to offset the fixed header */
-      animation: slideIn 2s ease-out;
+      padding: 20px;
     }
-
     .hero img {
-      width: 240px;
+      width: 200px;
       height: auto;
-      border-radius: 50%;
-      box-shadow: 0 0 25px rgba(255, 0, 153, 0.6);
-      transition: transform 0.5s ease;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
     }
-
     .hero img:hover {
-      transform: rotate(360deg);
+      transform: scale(1.05);
     }
-
-    /* Section Styles */
     section {
-      padding: 40px;
-      max-width: 900px;
-      margin: 20px auto;
-      background: #fffafa;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
-
-    section.in-view {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     h2 {
-      color: #ff1493;
-      margin-bottom: 15px;
-      font-family: 'Georgia', serif;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+      color: gold;
     }
-
-    ul li {
-      margin-bottom: 8px;
-      font-size: 1.1rem;
-    }
-
-    /* Contact Section */
     .contact a {
       display: block;
       color: #444;
       margin-bottom: 8px;
-      text-decoration: none;
-      font-size: 1.2rem;
       transition: color 0.3s ease;
     }
-
     .contact a:hover {
-      color: #ff1493;
+      color: hotpink;
     }
-
-    /* Icon Styling */
-    .contact i {
-      margin-right: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .contact a:hover i {
-      transform: scale(1.2);
-    }
-
-    /* Gallery */
-    .gallery {
-      text-align: center;
-      margin: 40px 0;
-      animation: fadeIn 1.5s ease-out;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-grid img:hover {
-      transform: scale(1.1);
-    }
-
     footer {
       text-align: center;
-      padding: 12px;
-      background: linear-gradient(to right, #ffd700, #ff1493);
+      padding: 10px;
+      background: gold;
       color: white;
-      font-weight: bold;
-      letter-spacing: 1px;
-      animation: fadeIn 3s ease-out;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    @keyframes slideIn {
-      0% { transform: translateY(-100%); }
-      100% { transform: translateY(0); }
-    }
-
-    /* Responsive Design */
-    @media screen and (max-width: 768px) {
-      header {
-        font-size: 2rem;
-        padding: 15px;
-      }
-
-      section {
-        padding: 20px;
-      }
-
-      .hero img {
-        width: 180px;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      .contact a {
-        font-size: 1.1rem;
-      }
     }
   </style>
 </head>
 <body>
-  <header>Mr. Maahi's Royal Empire</header>
-  
-  <!-- Hero Section -->
-  <div class="hero">
-    <img src="https://via.placeholder.com/240" alt="Mr. Maahi - The King">
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#activities">Activities</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>Welcome to Mr. Maahi's Academic Portfolio 👑</header>
+  <div class="hero" data-aos="zoom-in">
+    <img src="me.jpg" alt="Mr. Maahi - The King" />
   </div>
-  
-  <!-- About Me Section -->
-  <section>
+
+  <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
-    <p>Hello, I'm <strong>Shamil Maahi</strong>, an A/L Science stream student at Maayurapada National School in Sri Lanka. I specialize in Biology, Physics, and Chemistry, and have a strong passion for understanding the world.</p>
-    <p>My goal is to become a strategic leader, and I am committed to excellence in academics and beyond.</p>
+    <p>Hello, I'm Shamil Maahi, an Advanced Level student at Maayurapada National School in Sri Lanka, currently specializing in Science. My academic focus is on Bio, Physics, and Chemistry, and I am dedicated to achieving excellence in my education.</p>
+    <p>I am passionate about "exploring real world".</p>
   </section>
-  
-  <!-- Skills Section -->
-  <section>
+
+  <section id="skills" data-aos="fade-up">
     <h2>Skills</h2>
     <ul>
-      <li>Strategic Thinker</li>
-      <li>Leadership: Former NCC member</li>
-      <li>Disciplined and focused</li>
-      <li>Martial Arts: Shotokan Karate & Wing Chun</li>
-      <li>Goal-Driven & Future-Focused</li>
+      <li>Leadership: Former Scout Captain</li>
+      <li>Former NCC member</li>
     </ul>
   </section>
-  
-  <!-- Academic Achievements Section -->
-  <section>
+
+  <section id="achievements" data-aos="fade-up">
     <h2>Academic Achievements</h2>
     <ul>
-      <li>🥈 Silver Medalist – 2022 Karate Kata Championship</li>
+      <li>Silver Medal, 2022 – Karate Kata Championship</li>
     </ul>
   </section>
-  
-  <!-- Gallery Section -->
-  <section class="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-      <!-- Gallery images with hover effects -->
-      <a href="#"><img src="https://via.placeholder.com/300" alt="Gallery Image 1"></a>
-      <a href="#"><img src="https://via.placeholder.com/300" alt="Gallery Image 2"></a>
-      <a href="#"><img src="https://via.placeholder.com/300" alt="Gallery Image 3"></a>
-      <a href="#"><img src="https://via.placeholder.com/300" alt="Gallery Image 4"></a>
-    </div>
-  </section>
-  
-  <!-- Contact Section -->
-  <section class="contact">
-    <h2>Let's Connect</h2>
-    <a href="mailto:shamilmaahi17@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-    <a href="https://wa.me/94703608393" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    <!-- Fake links for social media -->
-    <a href="https://www.yourwebsite.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="https://www.yourwebsite.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-    <a href="https://www.yourwebsite.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-    <a href="https://www.yourwebsite.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-  </section>
-  
-  <footer>
-    &copy; 2025 Mr. Maahi | Crafted with care by Diana
-  </footer>
-  
-  <!-- Background Music -->
-  <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
 
-  <!-- JavaScript for Scroll Animations -->
+  <section id="activities" data-aos="fade-up">
+    <h2>Extracurricular Activities</h2>
+    <ul>
+      <li>Role: NCC member</li>
+      <li>Karate dojo member</li>
+    </ul>
+  </section>
+
+  <section class="contact" id="contact" data-aos="fade-up">
+    <h2>Contact</h2>
+    <a href="mailto:shamilmaahi17@gmail.com">Email: shamilmaahi17@gmail.com</a>
+    <a href="https://wa.me/94703608393">WhatsApp Me 👑</a>
+    <a href="#">LinkedIn: [Fake Link]</a>
+    <a href="#">Instagram: [Fake Link]</a>
+    <a href="#">Facebook: [Fake Link]</a>
+    <a href="#">Twitter: [Fake Link]</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Mr. Maahi | Designed by Queen Diana 💋
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const sections = document.querySelectorAll("section");
-      const observerOptions = { threshold: 0.2 };
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-  
-      sections.forEach(section => {
-        observer.observe(section);
-      });
-    });
+    AOS.init();
   </script>
 </body>
 </html>
